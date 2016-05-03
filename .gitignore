@@ -1,0 +1,19 @@
+# Compiled python modules.
+*.pyc
+
+# PyCharm folder.
+/.idea/
+
+# Setuptools distribution folder.
+/dist/
+
+# Build folder.
+/build/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+/*.egg
+
+# Test files
+crawl.py
+barabasi.json

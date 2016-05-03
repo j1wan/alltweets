@@ -8,7 +8,6 @@ API_PARAMETERS = (
     'exclude_replies',
     'contributor_details',
     'include_rts',
-
 )
 
 USER_AGENT = 'AllTweets'

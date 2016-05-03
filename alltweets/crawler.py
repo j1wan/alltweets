@@ -5,10 +5,9 @@ from .oauth import TwitterAppOnlyAuth
 class TwitterCrawler:
     def __init__(self, consumer_key, consumer_secret):
         """
-        Your application's Consumer Key and Secret are used to authenticate requests to the Twitter Platform.
+        AllTweet crawler only uses application-only authentication.
+        The crawler needs your CONSUMER KEY and SECRET.
         If you do not have them, you can get them from "https://apps.twitter.com/".
-        :param consumer_key:
-        :param consumer_secret:
         """
         self.auth = TwitterAppOnlyAuth(consumer_key, consumer_secret)
 
