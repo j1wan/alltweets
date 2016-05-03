@@ -1,9 +1,10 @@
-import base64
 import requests.auth
+import base64
+from .constants import *
+
 
 class TwitterAppOnlyAuth(requests.auth.AuthBase):
     """ https://dev.twitter.com/oauth/application-only """
-
     def __init__(self, consumer_key, consumer_secret):
         self._consumer_key = consumer_key
         self._consumer_secret = consumer_secret
@@ -21,12 +22,17 @@ class TwitterAppOnlyAuth(requests.auth.AuthBase):
         headers = {
             'Authorization': 'Basic ' + base64_credentials.decode('utf-8'),
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-            # 'User-Agent': USER_AGENT, TODO
+            'User-Agent': USER_AGENT
+        }
+
+        params = {
+            'grant_type': 'client_credentials'
         }
 
         try:
-            response = requests.post(url, headers=headers, params={'grant_type': 'client_credentials'})
+            response = requests.post(url, headers=headers, params=params)
             payload = response.json()
             return payload['access_token']
         except Exception as e:
+            # TODO
             raise Exception(e)

@@ -11,10 +11,8 @@ setup(
     long_description='A very simple Twitter crawler that can collect all friends, followers, and tweets of a specified user.',
     classifiers=[
         'Development Status :: 3 - Alpha',
-
-
     ],
-    keywords = 'Twitter crawl timeline research',
+    keywords = 'Twitter crawl timeline',
     url='http://github.com/j1wan/alltweets',
     author='Jiwan Jeong',
     author_email='jiwanjeong@gmail.com',

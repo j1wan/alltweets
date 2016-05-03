@@ -1,13 +1,26 @@
 import requests
+from .oauth import TwitterAppOnlyAuth
 
-from alltweets.twitter_auth import TwitterAppOnlyAuth
 
 
 class TwitterCrawler:
     def __init__(self, consumer_key, consumer_secret):
+        """
+        Your application's Consumer Key and Secret are used to authenticate requests to the Twitter Platform.
+        If you do not have them, you can get them from "https://apps.twitter.com/".
+        :param consumer_key:
+        :param consumer_secret:
+        """
         self.auth = TwitterAppOnlyAuth(consumer_key, consumer_secret)
 
+
     def get_user_timeline(self, **kwargs) -> list:
+        """
+        https://dev.twitter.com/rest/reference/get/statuses/user_timeline
+
+        :param kwargs:
+        :return:
+        """
         session = requests.Session()
         session.auth = self.auth
         url = 'https://api.twitter.com/1.1/statuses/user_timeline.json'
@@ -17,7 +30,7 @@ class TwitterCrawler:
             raise Exception('Error requesting GET statuses / user_timeline: %s' % e)
         return r.json()
 
-    def _user_timeline(self, **kwargs) -> list:
+    def all_user_timeline(self, **kwargs) -> list:
         if 'user_id' in kwargs == 'screen_name' in kwargs:
             raise Exception('EEE')
 
@@ -55,8 +68,6 @@ class TwitterCrawler:
         return r.json()
 
 
-
-
     def crawl_friends_ids(self, **kwargs) -> list:
         kwargs['cursor'] = -1
         kwargs['count'] = 5000
@@ -89,3 +100,5 @@ class TwitterCrawler:
             kwargs['cursor'] = batch['next_cursor']
 
         return followers
+
+

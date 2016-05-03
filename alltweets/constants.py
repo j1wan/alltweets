@@ -1,7 +1,17 @@
-USER_AGENT = 'EE'
+API_PARAMETERS = (
+    'user_id',
+    'screen_name',
+    'since_id',
+    'count',
+    'max_id',
+    'trim_user',
+    'exclude_replies',
+    'contributor_details',
+    'include_rts',
 
-CONSUMER_KEY = '2F9ZOCModHxKmaBjjKRV6Uf1Z'
-CONSUMER_SECRET = 'UZztAzxAOFfZj8emU5p0Yew84Aay3qXPlnfVXNbBKPwWtqpHBp'
+)
+
+USER_AGENT = 'AllTweets'
 
 ENDPOINTS = {
     'statuses/user_timeline': ('GET', 'api'),
