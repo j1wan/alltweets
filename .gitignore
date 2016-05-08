@@ -3,6 +3,7 @@
 
 # PyCharm folder.
 /.idea/
+/test.py
 
 # Setuptools distribution folder.
 /dist/
