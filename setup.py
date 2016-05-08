@@ -6,8 +6,8 @@ def readme():
 
 setup(
     name='alltweets',
-    version='0.1',
-    description='A very simple Twitter crawler',
+    version='0.2',
+    description='A very simple Twitter crawler that can collect all friends, followers, and tweets of a specified user.',
     long_description='A very simple Twitter crawler that can collect all friends, followers, and tweets of a specified user.',
     classifiers=[
         'Development Status :: 3 - Alpha',
