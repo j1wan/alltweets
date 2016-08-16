@@ -1,9 +1,11 @@
 AllTweets
 _________
 
+.. highlight::
+
 To crawl entire timeline of a user, simply do::
 
-.. highlight
+
 
 .. code-block:: python
 
