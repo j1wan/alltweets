@@ -3,7 +3,9 @@ _________
 
 To crawl entire timeline of a user, simply do::
 
-.. highlight:: python
+.. highlight
+
+.. code-block:: python
 
    from alltweets.crawler import TwitterCrawler
    crawler = TwitterCrawler(your_key, your_secret)
